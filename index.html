@@ -1,21 +1,94 @@
+
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>修真模拟器 2023 Remake v0.0.0</title>
+    <title>修真模拟器 2023 Remake v0.0.1</title>
     <style>
-
 @font-face {
 	font-family: 'CMDYSJ';
 	src: url(CMDYSJ.TTF);
 }
         .myProgress {
             font-weight: 600;
-  width: 380px;
+  width: 423px;
   background-color: #aaaaaa;
 }
+.button_option_dark {
+	box-shadow: 3px 4px 0px 0px #AAAAAA;
+	background: repeating-linear-gradient(45deg, rgb(44, 44, 44) 0%, rgb(15, 15, 15) 15%, rgb(44, 44, 44) 30%);
+	background-position: 0% 0%;
+	background-size: 250% 200%;
+	border-radius: 18px;
+	border: 2px solid #FFFFFF;
+	display: inline-block;
+	cursor: pointer;
+	color: #9eaab0;
+	font-size: 9px;
+	font-weight: bold;
+	max-width: 600px;
+	padding: 7px 25px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #380134;
+	animation: darkbtn 6s ease infinite;
+}
+
+.button_option_dark:hover {
+	background: repeating-linear-gradient(45deg, rgb(32, 32, 32) 0%, rgb(17, 17, 17) 15%, rgb(33, 33, 33)30%);
+	background-position: 0% 0%;
+	background-size: 250% 200%;
+	animation: darkbtn 4s ease infinite;
+}
+
+.button_option_dark:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+	animation: none;
+}
+
+.box{
+width: 100%;
+height: 200%;
+border: 1px solid black;
+color: #FFFFFF;
+display: none;
+}
+.text_upgrade .text_information {
+            visibility: hidden;
+            width: 118px;
+            height: 20px;
+            line-height: 22px;
+            background-color: #505050;
+            color: #ffffff;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 2px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            left: 55%;
+            margin-left: -65px;
+            margin-top: 14px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .text_upgrade .text_information::after {
+            content: "";
+            position: fixed;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555555 transparent transparent transparent;
+        }
+        .text_upgrade:hover .text_information {
+            visibility: visible;
+            opacity: 1;
+        }
 #XiuweiProgress {
-    
     font-weight: 600;
   width: 100%;
   background-color: #aaaaaa;
@@ -31,7 +104,7 @@
 	color: #888800;
 	font-size: 12px;
 	font-weight: bold;
-	max-width: 200px;
+	max-width: 800px;
 	padding: 4px 4px;
 	text-decoration: none;
 	animation: grosstxt 4s ease infinite;
@@ -49,12 +122,244 @@
 	left: 2px;
 	box-shadow: none;
 }
+.button_option_orange {
+	box-shadow: 3px 4px 0px 0px #aa652c;
+	background: none;
+	background-color: #ffa200;
+	border-radius: 10px;
+	border: 1px solid #af5205;
+	display: inline-block;
+	cursor: pointer;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	max-width: 800px;
+	padding: 4px 4px;
+	text-decoration: none;
+}
+
+
+.button_option_orange:hover {
+	background: none;
+	background-color: #ff7700;
+	color: #000000;
+}
+
+.button_option_orange:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+}
+.button_option_redR {
+	box-shadow: 3px 4px 0px 0px #aa2c2c;
+background: repeating-linear-gradient(135deg, rgb(255, 71, 71) 20%, rgb(255, 0, 0)  15%, rgb(255, 71, 71) 30%);
+            background-position: 0% 0%;
+	        background-size: 250% 200%;
+	border-radius: 10px;
+	border: 1px solid #800000;
+    animation: darkbtn 5s ease infinite;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;
+	max-width: 800px;
+	padding: 4px 4px;
+	text-decoration: none;
+    
+}
+
+
+.button_option_redR:hover {
+	background: none;
+    background: linear-gradient(0.25turn, #b50000, #9b4646, #992a2a);
+	color: #FFFFFF;
+}
+
+.button_option_redR:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+}
+.button_option_red {
+	box-shadow: 3px 4px 0px 0px #aa2c2c;
+background-color: #FF3300;
+	border-radius: 10px;
+	border: 1px solid #800000;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: bold;
+	max-width: 800px;
+	padding: 4px 4px;
+	text-decoration: none;
+}
+
+
+.button_option_red:hover {
+	background: none;
+	background-color: #a80000;
+	color: #FFFFFF;
+}
+
+.button_option_red:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+}
+.button_option_cyan {
+	box-shadow: 3px 4px 0px 0px #247777;
+background-color: #00DDFF;
+	border-radius: 10px;
+	border: 1px solid #007385;
+	display: inline-block;
+	cursor: pointer;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	max-width: 800px;
+	padding: 4px 4px;
+	text-decoration: none;
+}
+
+
+.button_option_cyan:hover {
+	background: none;
+	background-color: #005b88;
+	color: #FFFFFF;
+}
+
+.button_option_cyan:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+}
+.button_option_blued {
+	box-shadow: 3px 4px 0px 0px #161545;
+background-color: #000291;
+	border-radius: 10px;
+	border: 1px solid #07002b;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	max-width: 800px;
+	padding: 4px 4px;
+	text-decoration: none;
+}
+
+
+.button_option_blued:hover {
+	background: none;
+	background-color: #12033a;
+	color: #FFFFFF;
+}
+
+.button_option_blued:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+}
+.button_option_bluedR {
+    background: repeating-linear-gradient(90deg,#1f0099, #2415ca 10%);
+            background-position: 0% 0%;
+	        background-size: 250% 200%;
+            border-color: #190055;
+            animation: darkbtn 0.5s linear infinite;
+	box-shadow: 3px 4px 0px 0px #1a1938;
+	border-radius: 10px;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	max-width: 800px;
+	padding: 4px 4px;
+	text-decoration: none;
+}
+
+
+.button_option_bluedR:hover {
+	background: none;
+	background-color: #210374;
+	color: #FFFFFF;
+}
+
+.button_option_bluedR:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+}
+.button_option_cyanR {
+	box-shadow: 3px 4px 0px 0px #32b9b9;
+    background: repeating-radial-gradient(#00eaff, #00ffe1 10%);
+            background-position: 0% 0%;
+	        background-size: 250% 200%;
+            border-color: #00DDFF;
+	border-radius: 10px;
+	display: inline-block;
+	cursor: pointer;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	max-width: 800px;
+	padding: 4px 4px;
+	text-decoration: none;
+    animation: darkbtn 1s ease infinite;
+}
+
+
+.button_option_cyanR:hover {
+	background: none;
+	background-color: #0092db;
+	color: #FFFFFF;
+}
+
+.button_option_cyanR:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+}
+.button_option_orangeR {
+	box-shadow: 3px 4px 0px 0px #ff7300;
+	background: linear-gradient(to bottom,#ffae00 0%, #ffd900 100%);
+	border-radius: 10px;
+	border: 1px solid #eb6a00;
+	display: inline-block;
+	cursor: pointer;
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	max-width: 800px;
+	padding: 4px 4px;
+	text-decoration: none;
+}
+.button_option_orangeR:hover {
+	background: linear-gradient(to bottom,#d49100 0%, #c8b700 100%);
+	color: #000000;
+}
+
+.button_option_orangeR:active {
+	position: relative;
+	top: 3px;
+	left: 2px;
+	box-shadow: none;
+}
 @keyframes grosstxt {
 	0% {
 		color: #000088;
 	}
 	50% {
-		color: #008800;
+		color: #006800;
 	}
 	100% {
 		color: #000088;
@@ -62,7 +367,7 @@
 }
 
 .myBar {
-
+font-family: "Source Han Sans CN";
 font-weight: 600;
   width: 100px;
   height: 30px;
@@ -73,7 +378,6 @@ font-weight: 600;
   color: white;
 }
 #XiuweiBar {
-    
 font-weight: 600;
   width: 40%;
   height: 30px;
@@ -84,13 +388,11 @@ font-weight: 600;
   color: white;
 }
 div{
-    
 font-weight: 600;  
 }
 .div_getAchievement {
             position: fixed;
             right: 16px;
-            
 font-weight: 600;
             font-size: 15px;
             background-color: #a4ff98;
@@ -110,7 +412,6 @@ font-weight: 600;
             z-index: 101;
         }
 .button_option_blue {
-    
 font-weight: 600;
 box-shadow: 3px 4px 0px 0px #0000BB;
 background: linear-gradient(to bottom,#00CCFF 0%, #00AACC 100%);
@@ -139,7 +440,6 @@ background: linear-gradient(to bottom,#00CCFF 0%, #00AACC 100%);
 	box-shadow: none;
 }
         .button_option_green {
-            
 font-weight: 100;
 box-shadow: 3px 4px 0px 0px #218a3b;
 	background: linear-gradient(to bottom, #1dc42b 5%, #37f04a 100%);
@@ -167,7 +467,6 @@ box-shadow: 3px 4px 0px 0px #218a3b;
 	box-shadow: none;
 }
         .button_option_purple {
-            
 font-weight: 600;
 box-shadow: 3px 4px 0px 0px #40007b;
 	background: none;
@@ -195,20 +494,17 @@ box-shadow: 3px 4px 0px 0px #40007b;
 }
         
         .green{
-            
 font-weight: 600;
             background:radial-gradient(circle, #48A461 0%, #8CE8A5 100%);
             border-color: #0c5227;
         }
         .blue{
-            
 font-weight: 600;
             background:radial-gradient(circle, #4683f5 0%, #2b4afc 100%);
             color: white;
             border-color: #0000FF;
         }
         .purple{
-            
 font-weight: 600;
             color: white;
             border-color: #8000ff;
@@ -217,12 +513,58 @@ font-weight: 600;
             
         }
         .yellow{
-            
 font-weight: 600;
-            background:radial-gradient(circle, #4683f5 0%, #2b4afc 100%);
-            color: white;
-            border-color: #0000FF;
+            background: linear-gradient(135deg, rgb(255, 166, 12) 20%, rgb(246, 255, 0) 100%);
+            animation: grosstxt 4s ease infinite;
+            border-color: #000000;
         }
+        .orange{
+font-weight: 600;
+            background: linear-gradient(135deg, rgb(255, 166, 12) 20%, rgb(246, 255, 0) 100%);
+            background: repeating-linear-gradient(45deg, rgb(255, 157, 0) 0%, rgb(255, 208, 0) 15%, rgb(255, 157, 0) 30%);
+            background-position: 0% 0%;
+	        background-size: 250% 200%;
+            animation: darkbtn 3s ease infinite;
+        }
+        .cyan{
+font-weight: 600;
+color:#000000;
+            background: repeating-radial-gradient(#00eaff, #00ffe1 10%);
+            background-position: 0% 0%;
+	        background-size: 250% 200%;
+            border-color: #00DDFF;
+            animation: darkbtn 1s ease infinite;
+        }
+        .blued{
+font-weight: 600;
+color:#FFFFFF;
+            background: repeating-linear-gradient(90deg,#1f0099, #2415ca 10%);
+            background-position: 0% 0%;
+	        background-size: 250% 200%;
+            border-color: #190055;
+            animation: darkbtn 0.5s linear infinite;
+        }
+        .red{
+font-weight: 600;
+color:#FFFFFF;
+            background: repeating-linear-gradient(135deg, rgb(255, 71, 71) 20%, rgb(255, 0, 0)  15%, rgb(255, 71, 71) 30%);
+            background-position: 0% 0%;
+	        background-size: 250% 200%;
+            border-color: #FF3300;
+            animation: darkbtn 2s ease infinite;
+        }
+        @keyframes darkbtn {
+	0% {
+		background-position: 0% 0%;
+	}
+	50% {
+		background-position: 100% 0%;
+	}
+	100% {
+		background-position: 200% 0%;
+		background-position: 0% 0%;
+	}
+}
         @keyframes anim {
 	0% {
         background: radial-gradient(#8000ff, #ae47f7, #8000FF,#ae47f7);
@@ -291,13 +633,11 @@ font-weight: 600;
 }
 
         tr{
-            
 font-weight: 600;
             margin:10px;
         }
         
         .button_option_small {
-            
 font-weight: 100;
 box-shadow: 3px 4px 0px 0px #333333;
 	background: linear-gradient(to bottom, #dddddd 5%, #ffffff 100%);
@@ -327,38 +667,35 @@ box-shadow: 3px 4px 0px 0px #333333;
         body{
             font-family: "CMDYSJ", "Source Han Sans CN", "Courier Prime", "Lucida Console", monospace !important;
 font-weight: 600;
-            margin: 10px;
-            padding: 0px;
+            margin: 0px;
+            padding: 17px;
+            box-shadow: #000000 0px 0px 0px inset;
             text-align: center;
             background-color: #FFFFFF;
+            border: 0px solid #000000;
             color: #000000;
         }
         .dui-container{
-            
 font-weight: 600;
 position: relative;
 min-height: 100%;
 }
 main {
-    
 font-weight: 600;
 padding-bottom: 100px;
 }
 header, footer{
-    
 font-weight: 600;
 line-height: 100px;
 height: 50px;
 }
 footer{
-    
 font-weight: 600;
 width: 98%;
 position: absolute;
-top: 110px
+top: 110px;
 }
         button{
-            
 font-weight: 600;
             margin: 0px 5px 5px 0px;
             padding: 5px;
@@ -368,106 +705,142 @@ font-weight: 600;
             color: #F6DA63;
         }
         button:hover{
-            
 font-weight: 600;
             background-color: #9D0B0B;
         }
         h1, h2, h3, h4, h5, h6{
-            
 font-weight: 600;
             color: #000000;
            
         }
         .countButton{
-            
 font-weight: 600;
             height: 3rem;
             width: 32%;
             padding: 5px;
         }
         .countButton h2{
-            
 font-weight: 600;
             margin: 0px;
         }
         #aButton{
-            
 font-weight: 600;
             width: 100%;
         }
         #navDiv{
-            
 font-weight: 600;
             text-align: center;
         }
         #resetH3{
-            
 font-weight: 600;
             margin: 0px;
         }
         .floar-div{
-            
 font-weight: 600;
             float:left;
         }
         .inline-div{
-            
 font-weight: 600;
             float: left;
         }
         span{
-            
 font-weight: 600;
             margin:20px 0px 20px 0px
         }
     </style>
+    <div class = "box" id="box">
+        <div style="font-size: 30px;text-shadow: 0 0 10px #FFFFFF">=-=-= 羽化飞升 =-=-=</div>
+        <br>
+        <br>
+        <div style="font-size: 20px">经历了万载的苦修,无数次的转世重修和对抗心魔</div>
+        <br>
+        <div style="font-size: 20px">你从开始的一介凡人,一步步经历了修真凡界的一切苦难</div>
+        <br>
+        <div style="font-size: 20px">在今朝成功渡过了九重仙劫,飞升到了暗物质界,从此逍遥天地,长生不老,也见到了人间未曾有的异界景象...</div>
+        <br>
+        <div style="font-size: 20px">这个位面几乎是一片黑暗,暗物质界的仙人们在天地间肆意遨游,运用着无穷无尽的真元施放着你在凡界从未见过的耀眼仙术,没有了凡间的烟火缭绕,头顶的星空和银河清晰可辨.用暗物质和仙石制成的太阳形,双塔形,山峰形,水晶形,龙卷风等形状的能量跃迁塔和无处不在,颇有一种科技感.</div>
+        <br>
+        <div style="font-size: 20px">最令人瞩目的是一座由四根神秘的能量石柱构成的通天塔,它的上端一望无际,直抵上方的无尽星域,下端则分生出植物一般的根系,与暗物质界最底端相接.石柱上时不时会有几股亮蓝色的能量脉冲从上到下飞速流过.</div>
+        <br>
+        <div style="font-size: 20px">此时,星空中浮现出一位身姿妙曼的姑娘,身着一袭银白色纱裙,坐在一个云朵法宝上,笑盈盈地望着你.</div>
+        <br>
+        <div style="font-size: 25px;text-shadow: 0 0 10px #FFFFFF">WANG mayukKE</div>
+        <div style="font-size: 25px;text-shadow: 0 0 10px #FFFFFF">年龄:25600岁</div>
+        <div style="font-size: 25px;text-shadow: 0 0 10px #FFFFFF">修真:25587年</div>
+        <div style="font-size: 25px;text-shadow: 0 0 10px #FFFFFF">修为:1e60,500,000(+304 OOMs/s)</div>
+        <div style="font-size: 25px;text-shadow: 0 0 10px #FFFFFF">身高:16,300,000,000kn</div>
+        <div style="font-size: 25px;text-shadow: 0 0 10px #FFFFFF">体重:3,870,040,700kc</div>
+        <div style="font-size: 25px;text-shadow: 0 0 10px #FFFFFF">身份:品红物质界地津市湖西区自立仙宗第9届3号护法  暗物质界掌控者</div>
+        <br>
+        <div style="font-size: 20px">"道友好!我是这个修真位面的掌控者,WANG mayukKE,负责掌控暗物质界的境界修为,实力分布,突破瓶颈难度等天道的制定,以及整个位面修真者,商界秩序的调控."</div>
+        <br>
+        <div style="font-size: 20px">"我看道友是首次飞升到这个位面,作为见面礼,这个暗物质玉佩就赠予你了呢!快带着这个玉佩走进暗物质能量之塔,对,就是那个直插云霄的高塔,然后询问一下塔里的守护者,让他们把带你到塔内的暗物质湮灭水晶大厅.激活湮灭水晶后,湮灭水晶的作用能把你从开始修真到飞升暗物质界的所有修为全部转化为暗物质,辅助你下一世再次飞升至此的修炼!"</div>
+        <br>
+        <div style="font-size: 20px">"要注意的是,激活湮灭水晶获取暗物质将会重置你的修为 灵石 转生点数等所有你在凡界的修炼进度,还请道友三思哦!"</div>
+        <br>
+        <div style="font-size: 20px">"如果你通过次次飞升累积的暗物质数量超过了这个宇宙总原子数目的4次方,不,比4次方稍微少那么一点点,你就会飞升至下一重天,拥有更加强大的仙力!偷偷告诉你,你距离见到作者还有16重天哦,如果你的目标是拜见甚至挑战作者的话,这仅仅是个开端!"</div>
+        <br>
+        <button  id="upgrade1" style="font-size: 20px"class="button_option_dark" onclick="">激活水晶以获得 1 暗物质</button>
+        <br>
+        <div style="font-size: 20px">(敬请期待下次更新,暂时不可激活)</div>
+        <br>
+        <div style="font-size: 20px">作者:Jingwenxuan as a student of Tianjin Zili High School(Grade9,Class3)</div>
+        <br>
+        <div style="font-size: 20px">特别鸣谢(代码编写支持):QwQe308 QnmQe308 QmQe308......</div>
+    </div>
+    <div id = "main">
+    <marquee border="1" id = "news"  direction = "left" loop = "-1">点击这里可以额外获得0.01灵气，就这样...</marquee>
     <div class="div_getAchievement" id="getAchievement">
         <b>静思天真地义，追求永恒大道。苦修数载后，你的修为终于有所突破，境界提升到：</b><b id = "UpdateJingjie"></b>
     </div>
+    <div id="Export"></div>
     <div id="option1"><button class="button_option_small inline-div"  id="option1" onclick="option1()" style="width:67px">功法</button></div>
     <div id="option2"><button class="button_option_small inline-div" id="option2" onclick="option2()" style="width:67px">聚灵阵</button></div>
-    <div id="option3"><button class="button_option_blue inline-div" id="option3" onclick="option3();option3_1()" style="width:67px">练功房</button></div>
-    <div id="option3"><button class="button_option_yellow inline-div" id="option4" onclick="option4()" style="width:67px">转生</button></div><br>
+    <div id="option3"><button class="button_option_blue inline-div" id="option3" onclick="option3()" style="width:67px">练功房</button></div>
+    <div id="option4"><button class="button_option_yellow inline-div" id="option4" onclick="option4();option4_1()" style="width:67px">转生</button></div><br>
+    
     
        <span id ='hint' style="font-size: large;position:relative ; left:-100px"></span><span style="font-size: large"><br>当前灵气：</span><span id="Lingqi"style="font-size: 30px;text-shadow: 0 0 10px #000000"></span><br><br><br>
        <div id="option10">
-        <button id="addLingqi" onclick="userData.Lingqi=new Decimal(userData.Lingqi).add(new Decimal(userData.LingqiPerSec)).add(1)" class="countButton" ><h2>点击进行练功，以获取1秒练功可获得的灵气！</span></h2></button><br>
+        <br>
+    <div id="LingqiPerSec"style="font-size: 20px"></div>
+    <br>
        <table border="5" cellpadding="2" class="inline-div">
            <tr id="upgradeLine1">
-               <td width="200px"><div id="upgradeText1">一阶·引气术</div><span>等级 </span><span id="ShowUpgradeLevel1">0</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect1">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice1">20</span><span></span></td><td width="45px"><button  id="upgrade1" onclick="upgrade1()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+               <td width="200px"><div id="upgradeText1" class = "text_upgrade"><span class="text_information" id="upgradeText1_1" style="height: 20px;left: 11%;transition: all 0.3s;">基础效果：1300</span>一阶·引气术</div><span>等级 </span><span id="ShowUpgradeLevel1">0</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect1">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice1">20</span><span></span></td><td width="45px"><button  id="upgrade1" onclick="upgrade(1)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
            </tr>
        </table>
     <table border="5" cellpadding="2" class="inline-div">
         <tr id="upgradeLine1">
-            <td width="200px"><div id="upgradeText2">二阶·元阳术</div><span>等级 </span><span id="ShowUpgradeLevel2">0</span><br><span>需要境界达到 练气6阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect2">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice2">20</span><span></span></td><td width="45px"><button  id="upgrade2" onclick="upgrade2()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+            <td width="200px"><div id="upgradeText2">二阶·元阳术</div><span>等级 </span><span id="ShowUpgradeLevel2">0</span><br><span>需要境界达到 练气6阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect2">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice2">20</span><span></span></td><td width="45px"><button  id="upgrade2" onclick="upgrade(2)"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="inline-div">
         <tr id="upgradeLine1">
-            <td width="200px"><div id="upgradeText3">三阶·弄焰术</div><span>等级 </span><span id="ShowUpgradeLevel3">0</span><br><span>需要境界达到 练气11阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect3">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice3">20</span><span></span></td><td width="45px"><button  id="upgrade3" onclick="upgrade3()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+            <td width="200px"><div id="upgradeText3">三阶·弄焰术</div><span>等级 </span><span id="ShowUpgradeLevel3">0</span><br><span>需要境界达到 练气11阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect3">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice3">20</span><span></span></td><td width="45px"><button  id="upgrade3" onclick="upgrade(3)"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
         </tr>
     </table>
        <div id = "Zhuji1">
     <table border="5" cellpadding="2" class="inline-div green">
         <tr id="upgradeLine1">
-            <td width="200px"><div id="upgradeText4">四阶·残阳诀</div><span>等级 </span><span id="ShowUpgradeLevel4">0</span><br><span>需要境界达到 筑基1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect4">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice4">20</span><span></span></td><td width="45px"><button  id="upgrade4" onclick="upgrade4()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+            <td width="200px"><div id="upgradeText4">四阶·残阳诀</div><span>等级 </span><span id="ShowUpgradeLevel4">0</span><br><span>需要境界达到 筑基1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect4">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice4">20</span><span></span></td><td width="45px"><button  id="upgrade4" onclick="upgrade(4)"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="inline-div green">
         <tr id="upgradeLine1">
-            <td width="200px"><div id="upgradeText5">五阶·凝水诀</div><span>等级 </span><span id="ShowUpgradeLevel5">0</span><br><span>需要境界达到 筑基6阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect5">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice5">20</span><span></span></td><td width="45px"><button  id="upgrade5" onclick="upgrade5()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+            <td width="200px"><div id="upgradeText5">五阶·凝水诀</div><span>等级 </span><span id="ShowUpgradeLevel5">0</span><br><span>需要境界达到 筑基6阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect5">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice5">20</span><span></span></td><td width="45px"><button  id="upgrade5" onclick="upgrade(5)"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="inline-div green">
         <tr id="upgradeLine1">
-            <td width="200px"><div id="upgradeText6">六阶·九转金丹诀</div><span>等级 </span><span id="ShowUpgradeLevel6">0</span><br><span>需要境界达到 筑基11阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect6">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice6">20</span><span></span></td><td width="45px"><button  id="upgrade6" onclick="upgrade6()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+            <td width="200px"><div id="upgradeText6">六阶·九转金丹诀</div><span>等级 </span><span id="ShowUpgradeLevel6">0</span><br><span>需要境界达到 筑基11阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect6">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice6">20</span><span></span></td><td width="45px"><button  id="upgrade6" onclick="upgrade(6)"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
         </tr>
     </table>
        </div>
        <div id = "Kaiguang1">
     <table border="5" cellpadding="2" class="inline-div blue">
         <tr id="upgradeLine1">
-            <td width="200px"><div id="upgradeText7">七阶·仙源经</div><span>等级 </span><span id="ShowUpgradeLevel7">0</span><br><span>需要境界达到 开光1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect7">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice7">20</span><span></span></td><td width="45px"><button  id="upgrade7" onclick="upgrade7()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+            <td width="200px"><div id="upgradeText7">七阶·仙源经</div><span>等级 </span><span id="ShowUpgradeLevel7">0</span><br><span>需要境界达到 开光1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect7">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice7">20</span><span></span></td><td width="45px"><button  id="upgrade7" onclick="upgrade(7)"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
         </tr>
     </table> 
     <table border="5" cellpadding="2" class="inline-div blue">
@@ -481,25 +854,113 @@ font-weight: 600;
         </tr>
     </table>
        </div>
+       <br>
+       <div id = "Xindong1">
+       <table border="5" cellpadding="2" class="inline-div orange">
+        <tr id="upgradeLine1">
+            <td width="200px"><div id="upgradeText10">十阶·鸿蒙逍遥经</div><span>等级 </span><span id="ShowUpgradeLevel10">0</span><br><span>需要境界达到 心动1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect10">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice10">20</span><span></span></td><td width="45px"><button  id="upgrade10" onclick="upgrade10()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+        </tr>
+    
+    </table>
+    
+</div>
+<div id = "Jindan1">
+<table border="5" cellpadding="2" class="inline-div orange">
+    <tr id="upgradeLine1">
+        <td width="200px"><div id="upgradeText11">十一阶·虚无掌控经</div><span>等级 </span><span id="ShowUpgradeLevel11">0</span><br><span>需要境界达到 金丹1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect11">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice11">20</span><span></span></td><td width="45px"><button  id="upgrade11" onclick="upgrade11()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+    </tr>
+
+</table>
+</div>
+<div id = "Yuanying1">
+<table border="5" cellpadding="2" class="inline-div red">
+    <tr id="upgradeLine1">
+        <td width="200px"><div id="upgradeText12">十二阶·氘氚聚变法</div><span>等级 </span><span id="ShowUpgradeLevel12">0</span><br><span>需要境界达到 元婴1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect12">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice12">20</span><span></span></td><td width="45px"><button  id="upgrade12" onclick="upgrade12()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+    </tr>
+
+</table>
+</div>
+<div id = "Fenshen1">
+<table border="5" cellpadding="2" class="inline-div red">
+    <tr id="upgradeLine1">
+        <td width="200px"><div id="upgradeText13">十三阶·重铀裂变诀</div><span>等级 </span><span id="ShowUpgradeLevel13">0</span><br><span>需要境界达到 分神1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect13">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice13">20</span><span></span></td><td width="45px"><button  id="upgrade13" onclick="upgrade13()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+    </tr>
+
+</table>
+</div>
+<div id = "Heti1">
+<table border="5" cellpadding="2" class="inline-div cyan">
+    <tr id="upgradeLine1">
+        <td width="200px"><div id="upgradeText14">十四阶·恒星聚变法</div><span>等级 </span><span id="ShowUpgradeLevel14">0</span><br><span>需要境界达到 合体1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect14">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice14">20</span><span></span></td><td width="45px"><button  id="upgrade14" onclick="upgrade14(),Prestige()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+    </tr>
+
+</table>
+</div>
+<div id = "Dacheng1">
+<table border="5" cellpadding="2" class="inline-div blued">
+    <tr id="upgradeLine1">
+        <td width="200px"><div id="upgradeText15">十五阶·超新星爆发诀</div><span>等级 </span><span id="ShowUpgradeLevel15">0</span><br><span>需要境界达到 大乘1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect15">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice15">20</span><span></span></td><td width="45px"><button  id="upgrade15" onclick="upgrade15()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+    </tr>
+
+</table>
+</div>
+<div id = "Dujie1">
+<table border="5" cellpadding="2" class="inline-div blued">
+    <tr id="upgradeLine1">
+        <td width="200px"><div id="upgradeText16">十六阶·银河系毁灭诀</div><span>等级 </span><span id="ShowUpgradeLevel16">0</span><br><span>需要境界达到 渡劫1阶</span></td><td width="200px"><span>效果：每秒/每次修炼增加</span><span id="ShowUpgradeEffect16">20</span><span>灵气</span><span><br></span><span id="ShowUpgradePrice16">20</span><span></span></td><td width="45px"><button  id="upgrade16" onclick="upgrade16()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+    </tr>
+
+</table>
+</div>
+<div id = "Dujie2">
+<table border="5" cellpadding="2" class="inline-div blued">
+    <tr id="upgradeLine1">
+        <td width="200px"><div id="upgradeText16">十七阶·宇宙化烟诀</div><span>等级0<br>需要境界达到 渡劫8阶</span></td><td width="200px"><span>效果：??????</span><span id="ShowUpgradeEffect16"></span><span></span><span><br></span><span id="ShowUpgradePrice16">由于太过强大,全修真界上下暂无驾驭方法...</span><span></span></td><td width="45px"><button  id="upgrade16" onclick=""style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+    </tr>
+
+</table>
+</div>
+    <br>
+    <div id = "pp12">
+    <table border="5" cellpadding="2" class="inline-div yellow">
+        <tr id="upgradeLine1">
+            <td width="200px"><div id="upgradeTextS1">神一阶·五转返虚经</div><span>等级 </span><span id="ShowUpgradeLevelS1">0</span><br></td><td width="200px"><span>效果：提升灵气、修为获取</span><span id="ShowUpgradeEffectS1">1.00x</span><span><br></span><span id="ShowUpgradePriceS1">1Million</span><span></span><span>灵气</span></td><td width="45px"><button  id="upgradeS1" onclick="upgradeS1()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+        </tr>
+    </table>
+</div>
+<div id = "pp15">
+    <table border="5" cellpadding="2" class="inline-div yellow">
+        <tr id="upgradeLine1">
+            <td width="200px"><div id="upgradeTextS2">神二阶·七转还阳经</div><span>等级 </span><span id="ShowUpgradeLevelS2">0</span><br></td><td width="200px"><span>效果：提升转生点数效应、修为获取</span><span id="ShowUpgradeEffectS2">1.00x</span><span><br></span><span id="ShowUpgradePriceS2">1Million</span><span></span><span>灵气</span></td><td width="45px"><button  id="upgradeS2" onclick="upgradeS2()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+        </tr>
+    </table>
+</div>
+<div id = "pp18">
+    <table border="5" cellpadding="2" class="inline-div yellow">
+        <tr id="upgradeLine1">
+            <td width="200px"><div id="upgradeTextS3">神三阶·九转还魂经</div><span>等级 </span><span id="ShowUpgradeLevelS3">0</span><br></td><td width="200px"><span>效果：提升前两个神级功法的基础</span><span id="ShowUpgradeEffectS3">1.00x</span><span><br></span><span id="ShowUpgradePriceS3">1Million</span><span></span><span>神2功法等级</span></td><td width="45px"><button  id="upgradeS3" onclick="upgradeS3()"style="background-color:userData.Lingqi>=Gongfa2Cost? #DA2D2D:#00FF22;position:relative ; left:2px">升级</button></td>
+        </tr>
+    </table>
+</div>
      </div>
     <div id="option20">
   
-  <span style="font-size: large">灵石：</span><span id="Lingshi"style="font-size: 30px;text-shadow: 0 0 10px #000000"></span><br><br><br>
+  <span style="font-size: large">灵石：</span><span id="Lingshi" class="Lingshi" style="font-size: 30px;text-shadow: 0 0 10px #000000"></span><br><br><br>
   <table border="5" cellpadding="2">
     <tr id="upgradeLine1" class="inline-div">
-        <td width="150px"><div id="upgradeText21">废品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel21">0</span></td><td width="150px"><span>效果：每3秒聚集</span><span id="ShowUpgradeEffect21">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice21">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade21" onclick="upgrade21()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        <td width="150px"><div id="upgradeText21">废品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel21">0</span></td><td width="150px"><span>效果：每3秒聚集</span><span id="ShowUpgradeEffect21">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice21">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade21" onclick="upgrade2(1)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
         
     </tr>
     <tr id="upgradeLine1" class="inline-div">
         
-        <div id="myProgress1" class="myProgress"><div id="myBar" class="myBar"></div></div>
+        <div id="myProgress1" class="myProgress"><div id="myBar1" class="myBar"></div></div>
     </tr>
     
 </table>
 <br>
 <table border="5" cellpadding="2">
     <tr id="upgradeLine1" class="inline-div" >
-        <td width="150px"><div id="upgradeText22">凡品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel22">0</span></td><td width="150px"><span>效果：每5秒聚集</span><span id="ShowUpgradeEffect22">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice22">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade22" onclick="upgrade22()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        <td width="150px"><div id="upgradeText22">凡品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel22">0</span></td><td width="150px"><span>效果：每5秒聚集</span><span id="ShowUpgradeEffect22">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice22">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade22" onclick="upgrade2(2)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
         
     </tr>
     <tr id="upgradeLine1" class="inline-div" >
@@ -510,7 +971,7 @@ font-weight: 600;
 <br>
 <table border="5" cellpadding="2">
     <tr id="upgradeLine1" class="inline-div" >
-        <td width="150px"><div id="upgradeText23">下品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel23">0</span></td><td width="150px"><span>效果：每10秒聚集</span><span id="ShowUpgradeEffect23">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice23">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade23" onclick="upgrade23()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        <td width="150px"><div id="upgradeText23">下品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel23">0</span></td><td width="150px"><span>效果：每10秒聚集</span><span id="ShowUpgradeEffect23">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice23">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade23" onclick="upgrade2(3)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
         
     </tr>
     <tr id="upgradeLine1" class="inline-div" >
@@ -522,7 +983,7 @@ font-weight: 600;
 <div id = "Zhuji2">
 <table border="5" cellpadding="2" class="green">
     <tr id="upgradeLine1" class="inline-div" >
-        <td width="150px"><div id="upgradeText24">中品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel24">0</span></td><td width="150px"><span>效果：每15秒聚集</span><span id="ShowUpgradeEffect24">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice24">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade24" onclick="upgrade24()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        <td width="150px"><div id="upgradeText24">中品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel24">0</span></td><td width="150px"><span>效果：每15秒聚集</span><span id="ShowUpgradeEffect24">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice24">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade24" onclick="upgrade2(4)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
         
     </tr>
     <tr id="upgradeLine1" class="inline-div" >
@@ -533,7 +994,7 @@ font-weight: 600;
 <br>
 <table border="5" cellpadding="2" class="green">
     <tr id="upgradeLine1" class="inline-div" >
-        <td width="150px"><div id="upgradeText25">上品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel25">0</span></td><td width="150px"><span>效果：每35秒聚集</span><span id="ShowUpgradeEffect25">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice25">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade25" onclick="upgrade25()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        <td width="150px"><div id="upgradeText25">上品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel25">0</span></td><td width="150px"><span>效果：每35秒聚集</span><span id="ShowUpgradeEffect25">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice25">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade25" onclick="upgrade2(5)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
         
     </tr>
     <tr id="upgradeLine1" class="inline-div" >
@@ -544,7 +1005,7 @@ font-weight: 600;
 <br>
 <table border="6" cellpadding="2" class="green">
     <tr id="upgradeLine1" class="inline-div" >
-        <td width="150px"><div id="upgradeText26">精品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel26">0</span></td><td width="150px"><span>效果：每50秒聚集</span><span id="ShowUpgradeEffect26">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice26">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade26" onclick="upgrade26()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        <td width="150px"><div id="upgradeText26">精品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel26">0</span></td><td width="150px"><span>效果：每50秒聚集</span><span id="ShowUpgradeEffect26">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice26">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade26" onclick="upgrade2(6)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
         
     </tr>
     <tr id="upgradeLine1" class="inline-div" >
@@ -557,7 +1018,7 @@ font-weight: 600;
 <div id = "Kaiguang2">
 <table border="6" cellpadding="2" class="blue">
     <tr id="upgradeLine1" class="inline-div" >
-        <td width="150px"><div id="upgradeText27">极品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel27">0</span></td><td width="150px"><span>效果：每75秒聚集</span><span id="ShowUpgradeEffect27">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice27">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade27" onclick="upgrade27()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        <td width="150px"><div id="upgradeText27">极品聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel27">0</span></td><td width="150px"><span>效果：每75秒聚集</span><span id="ShowUpgradeEffect27">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice27">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade27" onclick="upgrade2(7)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
         
     </tr>
     <tr id="upgradeLine1" class="inline-div" >
@@ -568,7 +1029,7 @@ font-weight: 600;
 <br>
 <table border="6" cellpadding="2" class="blue">
     <tr id="upgradeLine1" class="inline-div" >
-        <td width="150px"><div id="upgradeText28">完美聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel28">0</span></td><td width="150px"><span>效果：每100秒聚集</span><span id="ShowUpgradeEffect28">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice28">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade28" onclick="upgrade28()"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        <td width="150px"><div id="upgradeText28">完美聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel28">0</span></td><td width="150px"><span>效果：每100秒聚集</span><span id="ShowUpgradeEffect28">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice28">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade28" onclick="upgrade2(8)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
         
     </tr>
     <tr id="upgradeLine1" class="inline-div" >
@@ -576,7 +1037,21 @@ font-weight: 600;
         
     </tr>
 </table>
+<br>
+
 </div>
+    <div id = "Ronghe1">
+<table border="6" cellpadding="2" class="purple">
+    <tr id="upgradeLine1" class="inline-div" >
+        <td width="150px"><div id="upgradeText29">凡仙聚灵阵</div><span>等级 </span><span id="ShowUpgradeLevel29">0</span></td><td width="150px"><span>效果：每120秒聚集</span><span id="ShowUpgradeEffect29">20</span><span>灵石</span><span><br>价格：</span><span id="ShowUpgradePrice29">20</span><span>灵气</span></td><td width="45px"><button  id="upgrade29" onclick="upgrade2(9)"style="background-color:userData.Lingqi>=Gongfa1Cost? #DA2D2D:#00FF22;position:relative ; left:3px">升级</button></td>
+        
+    </tr>
+    <tr id="upgradeLine1" class="inline-div" >
+        <div id="myProgress9" class="myProgress"><div id="myBar9" class="myBar"></div></div>
+        
+    </tr>
+</table>
+    </div>
 
 <br>
 <table border="0" cellpadding="0">
@@ -593,10 +1068,20 @@ font-weight: 600;
 </div>
 </div>
 <div id="option30">
+    <div id="XiuweiPerSec"style="font-size: 20px"></div>
     <div id="option31"><button class="button_option_small inline-div" id="option3" onclick="option3_1()" style="width:67px">练气境</button></div>
     <div id="option32"><button class="button_option_green inline-div" id="option3" onclick="option3_2()" style="width:67px">筑基境</button></div>
-    <div id="option33"><button class="button_option_blue inline-div" id="option3" onclick="option3_3()" style="width:67px">开光境</button></div><br><br>
-    <div id = "addXiuwei"><button id="addLingqi" onclick="userData.Xiuwei=new Decimal(userData.Xiuwei).add(new Decimal(userData.XiuweiPerSec))" class="countButton" ><h2>点击进行修炼，以获取1秒修炼可获得的修为！</span></h2></button></div>
+    <div id="option33"><button class="button_option_blue inline-div" id="option3" onclick="option3_3()" style="width:67px">开光境</button></div>
+    <div id="option34"><button class="button_option_purple inline-div" id="option4" onclick="option3_4()" style="width:67px">融合境</button></div>
+    <div id="option35"><button class="button_option_orange inline-div" id="option5" onclick="option3_5()" style="width:67px">心动境</button></div>
+    <div id="option36"><button class="button_option_orangeR inline-div" id="option6" onclick="option3_6()" style="width:67px">金丹境</button></div>
+    <div id="option37"><button class="button_option_red inline-div" id="option7" onclick="option3_7()" style="width:67px">元婴境</button></div>
+    <div id="option38"><button class="button_option_redR inline-div" id="option8" onclick="option3_8()" style="width:67px">分神境</button></div>
+    <div id="option39"><button class="button_option_cyan inline-div" id="option9" onclick="option3_9()" style="width:67px">合体境</button></div>
+    <div id="option310"><button class="button_option_cyanR inline-div" id="option10" onclick="option3_10()" style="width:67px">炼虚境</button></div>
+    <div id="option311"><button class="button_option_blued inline-div" id="option11" onclick="option3_11()" style="width:67px">大乘境</button></div>
+    <div id="option312"><button class="button_option_bluedR inline-div" id="option12" onclick="option3_12()" style="width:67px">渡劫境</button></div><br><br>
+    <span style="font-size: large">灵石：</span><span id="Lingshi2" class="Lingshi"style="font-size: 30px;text-shadow: 0 0 10px #000000"></span><br>
 <div id="option3_1">
 
     
@@ -608,7 +1093,7 @@ font-weight: 600;
             <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·150灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+100修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
         </tr>
         <tr id="upgradeLine1">
-            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian11()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(1)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="green inline-div">
@@ -619,7 +1104,7 @@ font-weight: 600;
             <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=245灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+125修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
         </tr>
         <tr id="upgradeLine1">
-            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian12()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(2)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="blue inline-div">
@@ -630,7 +1115,7 @@ font-weight: 600;
             <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》900灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+255修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
         </tr>
         <tr id="upgradeLine1">
-            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian13()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(3)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="purple inline-div">
@@ -641,7 +1126,7 @@ font-weight: 600;
             <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》5500灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+600修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
         </tr>
         <tr id="upgradeLine1">
-            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian14()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(4)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
         </tr>
     </table>
 
@@ -653,10 +1138,10 @@ font-weight: 600;
         <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【筑基】黄字号练功房</div></td>
     </tr>
     <tr id="upgradeLine2">
-        <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·1.5万灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+2000修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+        <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·15k灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+2000修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
     </tr>
     <tr id="upgradeLine1">
-        <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian21()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+        <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(5)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
     </tr>
 </table>
 <table border="5" cellpadding="2" class="green inline-div">
@@ -664,10 +1149,10 @@ font-weight: 600;
         <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【筑基】玄字号练功房</div></td>
     </tr>
     <tr id="upgradeLine2">
-        <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=3.3万灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+3200修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+        <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=33k灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+3200修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
     </tr>
     <tr id="upgradeLine1">
-        <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian22()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+        <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(6)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
     </tr>
 </table>
 <table border="5" cellpadding="2" class="blue inline-div">
@@ -675,10 +1160,10 @@ font-weight: 600;
         <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【筑基】地字号练功房</div></td>
     </tr>
     <tr id="upgradeLine2">
-        <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》9万灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+4900修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+        <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》90k灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+4900修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
     </tr>
     <tr id="upgradeLine1">
-        <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian23()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+        <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(7)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
     </tr>
 </table>
 <table border="5" cellpadding="2" class="purple inline-div">
@@ -686,10 +1171,10 @@ font-weight: 600;
         <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【筑基】天字号练功房</div></td>
     </tr>
     <tr id="upgradeLine2">
-        <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》65万灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+13500修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+        <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》650k灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+13500修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
     </tr>
     <tr id="upgradeLine1">
-        <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian24()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+        <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(8)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
     </tr>
 </table>
 
@@ -700,10 +1185,10 @@ font-weight: 600;
             <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【开光】黄字号练功房</div></td>
         </tr>
         <tr id="upgradeLine2">
-            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·42万灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+2.7万修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·420k灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+27k修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
         </tr>
         <tr id="upgradeLine1">
-            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian31()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(9)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="green inline-div">
@@ -711,10 +1196,10 @@ font-weight: 600;
             <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【开光】玄字号练功房</div></td>
         </tr>
         <tr id="upgradeLine2">
-            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=88万灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+4.4万修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=880k灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+44k修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
         </tr>
         <tr id="upgradeLine1">
-            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian32()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(10)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="blue inline-div">
@@ -722,10 +1207,10 @@ font-weight: 600;
             <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【开光】地字号练功房</div></td>
         </tr>
         <tr id="upgradeLine2">
-            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》288万灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+12万修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》2.99M灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+120k修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
         </tr>
         <tr id="upgradeLine1">
-            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian33()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(11)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
         </tr>
     </table>
     <table border="5" cellpadding="2" class="purple inline-div">
@@ -733,15 +1218,463 @@ font-weight: 600;
             <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【开光】天字号练功房</div></td>
         </tr>
         <tr id="upgradeLine2">
-            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》1000万灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+30万修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》10M灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+300k修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
         </tr>
         <tr id="upgradeLine1">
-            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian34()">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(12)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
         </tr>
     </table>
     </div>
+    <div id="option3_4">
+        <table border="5" cellpadding="2"  class="white inline-div">
+        <tr id="upgradeLine1">
+            <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【融合】黄字号练功房</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·6.5M灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+140k修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+        </tr>
+        <tr id="upgradeLine1">
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(13)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+        </tr>
+    </table>
+    <table border="5" cellpadding="2" class="green inline-div">
+        <tr id="upgradeLine1">
+            <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【融合】玄字号练功房</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=9.8M灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+190k修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+        </tr>
+        <tr id="upgradeLine1">
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(14)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+        </tr>
+    </table>
+    <table border="5" cellpadding="2" class="blue inline-div">
+        <tr id="upgradeLine1">
+            <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【融合】地字号练功房</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》50M灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+700k修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+        </tr>
+        <tr id="upgradeLine1">
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(15)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+        </tr>
+    </table>
+    <table border="5" cellpadding="2" class="purple inline-div">
+        <tr id="upgradeLine1">
+            <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【融合】天字号练功房</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》333M灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+2.55M修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+        </tr>
+        <tr id="upgradeLine1">
+            <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(16)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+        </tr>
+    </table>
+    </div>
+    <div id="option3_5">
+        <table border="5" cellpadding="2"  class="white inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【心动】黄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·150M灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+1M修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(17)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="green inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【心动】玄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=300M灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+1.4M修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(18)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="blue inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【心动】地字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》900M灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+3.5M修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(19)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="purple inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【心动】天字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》4.5B灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+11M修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(20)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="option3_6">
+        <table border="5" cellpadding="2"  class="white inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【金丹】黄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·10T灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+4B修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(21)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="green inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【金丹】玄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=1Qa灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+40B修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(22)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="blue inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【金丹】地字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》10Qa灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+1T修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(23)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="purple inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【金丹】天字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》1Qt灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+30T修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(24)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="option3_7">
+        <table border="5" cellpadding="2"  class="white inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【元婴】黄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·100T灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+100B修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(25)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="green inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【元婴】玄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=10Qa灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+600B修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(26)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="blue inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【元婴】地字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》100Qt灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+50T修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(27)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="purple inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【元婴】天字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》100Sx灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+300T修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(28)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="option3_8">
+        <table border="5" cellpadding="2"  class="white inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【分神】黄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·1Oc灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+1Qa修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(29)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="green inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【分神】玄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=100Oc灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+3Qa修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(30)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="blue inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【分神】地字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》10Dc灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>》+20Qa修为/点击《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(31)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="purple inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【分神】天字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》1Ddc灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+500Qa修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(32)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="option3_9">
+        <table border="5" cellpadding="2"  class="white inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【合体】黄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·100Udc灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+1Qt修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(33)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="green inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【合体】玄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=10Ddc灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+20Qt修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(34)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="blue inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【合体】地字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》1e43灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+400Qt修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(35)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="purple inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【合体】天字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》1e46灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+8Sx修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(36)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="option3_10">
+        <table border="5" cellpadding="2"  class="white inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【炼虚】破损的练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">这个练功房破损了<br>年久失修</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">炼虚大能太少<br>修不起练功房</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">为你带来不便<br>请见谅...</div></td>
+            </tr>
+        </table>
+    </div>
+    <div id="option3_11">
+        <table border="5" cellpadding="2"  class="white inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【大乘】黄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·1e80灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+100Sx修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(37)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="green inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【大乘】玄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=1e90灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+2Sp修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(38)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="blue inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【大乘】地字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》1e100灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+40Sp修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(39)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="purple inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【大乘】天字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》1e120灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+800Sp修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(40)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="option3_12">
+        <table border="5" cellpadding="2"  class="white inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【渡劫】黄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>·1e125灵石·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>·+100Oc修为/点击·</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>·15s·</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_small" onclick="Xiulian(41)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="green inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【渡劫】玄字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=1e140灵石=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>=+2No修为/点击=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=15s=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_green" onclick="Xiulian(42)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="blue inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【渡劫】地字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>》1e160灵石《</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+400No修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>》15s《</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_blue" onclick="Xiulian(43)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+        <table border="5" cellpadding="2" class="purple inline-div">
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><div id="upgradeText1"style="font-size: 30px;text-align:center">【渡劫】天字号练功房</div></td>
+            </tr>
+            <tr id="upgradeLine2">
+                <td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">入场费<br>=》1e180灵石《=</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼效果<br>+80Dc修为/点击</div></td><td width="100px"><div id="upgradeText1"style="font-size: 20px;text-align:center">修炼限时<br>=》15s《=</div></td>
+            </tr>
+            <tr id="upgradeLine1">
+                <td width="600px" colspan="3"><button  id="upgrade1" style="font-size: 20px;position:relative ; left:120px"class="button_option_purple" onclick="Xiulian(44)">>>>>点我支付入场费并开始修炼！<<<<</button></td>
+            </tr>
+        </table>
+    </div>
 </div>
 <div id="option40">
+    <div id="option4_1"><button class="button_option_yellow inline-div" id="option4" onclick="option4_1()" style="width:67px">转生</button></div>
+    <div id="option4_2"><button class="button_option_yellow inline-div" id="option4" onclick="option4_2()" style="width:67px">转生升级</button></div>
+    <div id="option4_3"><button class="button_option_red inline-div" id="option4" onclick="option4_3()" style="width:67px">心魔</button></div><br><br><br>
+<div id="option41">
+    <span style="font-size: large">你当前拥有转生点数：</span><span id="pp" class="Lingshi" style="font-size: 30px;text-shadow: 0 0 10px #ffaa00;color:#ffaa00"></span><br>
+    <span style="font-size: large">这使得你的灵气和灵石获取全部获得一个乘数：</span><span id="ppEff" class="Lingshi" style="font-size: 30px;text-shadow: 0 0 10px #ffaa00;color: #ffaa00"></span><br>
+    <span style="font-size: large">目前为止，你总共进行的转生次数：</span><span id="ppTimes" class="Lingshi" style="font-size: 30px;text-shadow: 0 0 10px #ffaa00;color: #ffaa00"></span><br>
+    <table border="5" cellpadding="0" class="yellow inline-div" style="position:center;">
+        <tr id="upgradeLine1">
+            <td width="800px" colspan="4"><div id="upgradeText1"style="font-size: 30px;text-align:center;padding:4px">转生</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="800px" colspan="4"><div id="upgradeText1"style="font-size: 15px;text-align:center;padding:4px">转生将会重置你的境界、修为、灵气、灵石、功法等级和聚灵阵等级，但作为回报，你将会获得转生点数。</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="400px" colspan="2"><div id="ZhuangShengLingqiText"style="font-size: 15px;text-align:center;padding:4px">转生需要灵气达到 10B</div></td><td width="400px" colspan="2"><div id="LingqiMult"style="font-size: 15px;text-align:center;padding:4px">》》》转生灵气乘数：1.00x《《《</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="400px" colspan="2"><div id="ZhuangShengLingqiText"style="font-size: 15px;text-align:center;padding:4px">转生需要境界达到 开光10阶</div></td><td width="400px" colspan="2"><div id="JingjieMult"style="font-size: 15px;text-align:center;padding:4px">》》》转生境界乘数：1.00x《《《</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="800px" colspan="4"><div id="canZhuansheng"style="font-size: 15px;text-align:center;padding:4px">如果你愿意的话，你可以随时进行转生。(转生条件全部已满足)</div></td>
+        </tr>
+        <tr id="upgradeLine2">
+            <td width="800px" colspan="4"><div style="font-size: 15px;text-align:center;padding:4px"><button  id="prestige" style="font-size: 20px;position:relative ; left:0px"class="button_option_yellow" onclick="if(!userData.ppUpg.includes(21))Prestige()"></button></div></td>
+        </tr>
+    </table>
+ 
+    </div>
+    <div id="option42">
+<br>
+    <button id="Upgrade11" style="font-size: 10px;position:relative ; left:0px"class="button_option_yellow inline_div" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade11.cost())&&upgrades.Upgrade11.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade11.cost()),userData.ppUpg.push(11)"></button>
+    <button id="Upgrade12" style="font-size: 10px;position:relative ; bottom:-10px"class="button_option_yellow inline_div" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade12.cost())&&upgrades.Upgrade12.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade12.cost()),userData.ppUpg.push(12)"></button>
+    <button id="Upgrade13" style="font-size: 10px;position:relative ; bottom:0px"class="button_option_yellow inline_div" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade13.cost())&&upgrades.Upgrade13.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade13.cost()),userData.ppUpg.push(13)"></button>
+    <button id="Upgrade14" style="font-size: 10px;position:relative ; bottom:0px"class="button_option_yellow inline_div" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade14.cost())&&upgrades.Upgrade14.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade14.cost()),userData.ppUpg.push(14)"></button>
+    <br>
+    <br>
+    <button id="Upgrade15" style="font-size: 10px;position:relative ; bottom:0px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade15.cost())&&upgrades.Upgrade15.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade15.cost()),userData.ppUpg.push(15)"></button>
+    <button id="Upgrade16" style="font-size: 10px;position:relative ; bottom:0px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade16.cost())&&upgrades.Upgrade16.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade16.cost()),userData.ppUpg.push(16)"></button>
+    <button id="Upgrade17" style="font-size: 10px;position:relative ; bottom:10px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade17.cost())&&upgrades.Upgrade17.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade17.cost()),userData.ppUpg.push(17)"></button>
+    <button id="Upgrade18" style="font-size: 10px;position:relative ; bottom:0px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade18.cost())&&upgrades.Upgrade18.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade18.cost()),userData.ppUpg.push(18)"></button>
+    <br>
+    <br>
+    <button id="Upgrade19" style="font-size: 10px;position:relative ; bottom:10px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade19.cost())&&upgrades.Upgrade19.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade19.cost()),userData.ppUpg.push(19)"></button>
+    <button id="Upgrade20" style="font-size: 10px;position:relative ; bottom:10px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade20.cost())&&upgrades.Upgrade20.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade20.cost()),userData.ppUpg.push(20)"></button>
+    <button id="Upgrade21" style="font-size: 10px;position:relative ; bottom:20px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade21.cost())&&upgrades.Upgrade21.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade21.cost()),userData.ppUpg.push(21)"></button>
+    <button id="Upgrade22" style="font-size: 10px;position:relative ; bottom:10px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade22.cost())&&upgrades.Upgrade22.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade22.cost()),userData.ppUpg.push(22)"></button>
+    <br>
+    <br>
+    <button id="Upgrade23" style="font-size: 10px;position:relative ; bottom:20px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade23.cost())&&upgrades.Upgrade23.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade23.cost()),userData.ppUpg.push(23)"></button>
+    <button id="Upgrade24" style="font-size: 10px;position:relative ; bottom:30px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade24.cost())&&upgrades.Upgrade24.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade24.cost()),userData.ppUpg.push(24)"></button>
+    <button id="Upgrade25" style="font-size: 10px;position:relative ; bottom:30px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade25.cost())&&upgrades.Upgrade25.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade25.cost()),userData.ppUpg.push(25)"></button>
+    <button id="Upgrade26" style="font-size: 10px;position:relative ; bottom:30px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade26.cost())&&upgrades.Upgrade26.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade26.cost()),userData.ppUpg.push(26)"></button>
+    <button id="Upgrade27" style="font-size: 10px;position:relative ; bottom:30px"class="button_option_yellow" onclick="if(userData.PrestigePoints.gte(upgrades.Upgrade27.cost())&&upgrades.Upgrade27.canAfford())userData.PrestigePoints = userData.PrestigePoints.sub(upgrades.Upgrade27.cost()),userData.ppUpg.push(27)"></button>
+</div>
+<div id="option43">
+    <span style="font-size: large">你当前拥有的转生升级数目：</span><span id="ppUpgs" class="Lingshi" style="font-size: 30px;text-shadow: 0 0 10px #ff0000;color:#ff0000"></span><br>
+    <span style="font-size: large">你的心魔值为：</span><span id="Xinmo" class="Lingshi" style="font-size: 30px;text-shadow: 0 0 10px #ff0000;color: #ff0000"></span><br>
+    <span style="font-size: large">这使得你的转生点数除以</span><span id="XinmoD" class="Lingshi" style="font-size: 30px;text-shadow: 0 0 10px #ff0000;color: #ff0000"></span><br>
+    <span style="font-size: large">但心魔使你历经磨练，转生效应和修为提升：</span><span id="XinmoI" class="Lingshi" style="font-size: 30px;text-shadow: 0 0 10px #ff0000;color: #ff0000"></span><br><br>
+    <button style="font-size: 10px;position:relative ; bottom:0px"class="button_option_redR" onclick="userData.ppUpg = [21],userData.Xinmo = new Decimal(0),userData.Lingqi = new Decimal(1),userData.totalLingqi = new Decimal(1),userData.Xiuwei = new Decimal(1),userData.Jingjieid = new Decimal(1),userData.Lingshi = new Decimal(1)">摆放清心大阵，除去你的所有心魔，但强制重置除了挂机外的所有转生升级，并抹去你的灵气、灵石、境界！</button><br>
+    <button id="Buyable11" style="font-size: 10px;position:relative ; left:0px"class="button_option_yellow inline_div" onclick="if(userData.Xinmo.gte(buyables.Buyable11.cost())&&buyables.Buyable11.canAfford())userData.Xinmo = userData.Xinmo.sub(buyables.Buyable11.cost()),userData.XinmoBuyable1++"></button>
+    <button id="Buyable12" style="font-size: 10px;position:relative ; left:0px"class="button_option_yellow inline_div" onclick="if(userData.Xinmo.gte(buyables.Buyable12.cost())&&buyables.Buyable12.canAfford())userData.Xinmo = userData.Xinmo.sub(buyables.Buyable12.cost()),userData.XinmoBuyable2++"></button>
+    <button id="Buyable13" style="font-size: 10px;position:relative ; left:0px"class="button_option_yellow inline_div" onclick="if(userData.Xinmo.gte(buyables.Buyable13.cost())&&buyables.Buyable13.canAfford())userData.Xinmo = userData.Xinmo.sub(buyables.Buyable13.cost()),userData.XinmoBuyable3++"></button>
+    <br>
+    <br>
+    <button id="Buyable14" style="font-size: 10px;position:relative ; left:0px"class="button_option_yellow inline_div" onclick="if(userData.Xinmo.gte(buyables.Buyable14.cost())&&buyables.Buyable14.canAfford())userData.Xinmo = userData.Xinmo.sub(buyables.Buyable14.cost()),userData.XinmoBuyable4++"></button>
+    <button id="Buyable15" style="font-size: 10px;position:relative ; left:0px"class="button_option_yellow inline_div" onclick="if(userData.Xinmo.gte(buyables.Buyable15.cost())&&buyables.Buyable15.canAfford())userData.Xinmo = userData.Xinmo.sub(buyables.Buyable15.cost()),userData.XinmoBuyable5++"></button>
+    <button id="Buyable16" style="font-size: 10px;position:relative ; bottom:18px"class="button_option_yellow inline_div" onclick="if(userData.Xinmo.gte(buyables.Buyable16.cost())&&buyables.Buyable16.canAfford())userData.Xinmo = userData.Xinmo.sub(buyables.Buyable16.cost()),userData.XinmoBuyable6++"></button>
+</div>
 
 </div>
 <footer><span id = "XiuweiDisplay"></span><div id="XiuweiProgress"><div id="XiuweiBar"></div></div></footer>
@@ -749,13 +1682,14 @@ font-weight: 600;
     
 </head>
 <body>
-    <script src="break_eternity.js"></script>
-    <script src="NumberFormating.js"></script>
     <script src="main.js"></script>
- 
-
-
-
+ <script>function news()
+    {
+      var x = Math.floor(Math.random()*15);
+      document.getElementById("news").innerHTML = News[x]
+    }
+    
+    </script>
 
 
 
@@ -777,5 +1711,9 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>    </div>
+
+
+
+    
 </body>
 </html>
