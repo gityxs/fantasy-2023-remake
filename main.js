@@ -3717,10 +3717,11 @@ function invertOOM(x){
 
 window.onload=function(){
   userData = JSON.parse(window.localStorage["gameStateData"]);
+  if(userData.ppUpg === undefined||userData.ppUpg===null) userData.ppUpg = []
   if(userData.GongfaS1Level === undefined) userData.GongfaS1Level = new Decimal(0)
   if(userData.GongfaS2Level === undefined) userData.GongfaS2Level = new Decimal(0)
   if(userData.GongfaS3Level === undefined) userData.GongfaS3Level = new Decimal(0)
-  if(userData.Lingqi === undefined) userData.Lingqi = new Decimal(100)
+  if(userData.Lingqi === undefined||userData.Lingqi<100) userData.Lingqi = new Decimal(100)
   if(userData.totalLingqi === undefined) userData.totalLingqi = new Decimal(100)
   if(userData.LingqiPerSec === undefined) userData.LingqiPerSec = new Decimal(0)
   if(userData.XiuweiPerSec === undefined) userData.XiuweiPerSec = new Decimal(0)
@@ -3740,7 +3741,7 @@ window.onload=function(){
   if(userData.XinmoBuyable7 === undefined) userData.XinmoBuyable7 = new Decimal(0)
   if(userData.XinmoBuyable8 === undefined) userData.XinmoBuyable8 = new Decimal(0)
   if(userData.XinmoBuyable9 === undefined) userData.XinmoBuyable9 = new Decimal(0)
-  if(userData.ppUpg === undefined) userData.ppUpg = []
+  if(userData.ppUpg === undefined||userData.ppUpg===null) userData.ppUpg = []
   if(userData.Jingjie === undefined) userData.Jingjie = '练气1阶'
   if(userData.XiulianBalance === undefined) userData.XiulianBalance = new Decimal(0)
     option1()
